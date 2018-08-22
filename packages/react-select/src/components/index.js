@@ -34,6 +34,7 @@ import Menu, {
 } from './Menu';
 import MultiValue, {
   type MultiValueProps,
+  MultiValueLabelsContainer,
   MultiValueContainer,
   MultiValueLabel,
   MultiValueRemove,
@@ -67,6 +68,7 @@ export type SelectComponents = {
   LoadingMessage: ComponentType<NoticeProps>,
   NoOptionsMessage: ComponentType<NoticeProps>,
   MultiValue: ComponentType<MultiValueProps>,
+  MultiValueLabelsContainer: ComponentType<any>,
   MultiValueContainer: ComponentType<any>,
   MultiValueLabel: ComponentType<any>,
   MultiValueRemove: ComponentType<any>,
@@ -97,6 +99,7 @@ export const components = {
   LoadingMessage: LoadingMessage,
   NoOptionsMessage: NoOptionsMessage,
   MultiValue: MultiValue,
+  MultiValueLabelsContainer: MultiValueLabelsContainer,
   MultiValueContainer: MultiValueContainer,
   MultiValueLabel: MultiValueLabel,
   MultiValueRemove: MultiValueRemove,
