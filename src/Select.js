@@ -1376,6 +1376,7 @@ export default class Select extends Component<Props, State> {
       MultiValue,
       MultiValueContainer,
       MultiValueLabel,
+      MultiValueLabelsContainer,
       MultiValueRemove,
       SingleValue,
       Placeholder,
@@ -1426,7 +1427,11 @@ export default class Select extends Component<Props, State> {
           </MultiValue>
         );
       });
-      return selectValues;
+      return (
+        <MultiValueLabelsContainer {...commonProps}>
+          {selectValues}
+        </MultiValueLabelsContainer>
+      );
     }
 
     if (inputValue) {
