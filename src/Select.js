@@ -133,6 +133,8 @@ export type Props = {
   getOptionLabel: typeof getOptionLabel,
   /* Resolves option data to a string to compare options and specify value attributes */
   getOptionValue: typeof getOptionValue,
+  /* Props to pass to group header */
+  groupHeaderProps?: Object,
   /* Hide the selected option from the menu */
   hideSelectedOptions: boolean,
   /* The id to set on the SelectContainer component. */
@@ -237,6 +239,7 @@ export const defaultProps = {
   formatGroupLabel: formatGroupLabel,
   getOptionLabel: getOptionLabel,
   getOptionValue: getOptionValue,
+  groupHeaderProps: {},
   isDisabled: false,
   isLoading: false,
   isMulti: false,
@@ -1548,6 +1551,7 @@ export default class Select extends Component<Props, State> {
     const { focusedOption, menuOptions } = this.state;
     const {
       captureMenuScroll,
+      groupHeaderProps,
       inputValue,
       isLoading,
       loadingMessage,
@@ -1595,6 +1599,7 @@ export default class Select extends Component<Props, State> {
               Heading={GroupHeading}
               headingProps={{
                 id: headingId,
+                ...groupHeaderProps
               }}
               label={this.formatGroupLabel(item.data)}
             >
