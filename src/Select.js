@@ -1589,7 +1589,7 @@ export default class Select extends Component<Props, State> {
     if (this.hasOptions()) {
       menuUI = menuOptions.render.map(item => {
         if (item.type === 'group') {
-          const { type, ...group } = item;
+          const { type, headingProps, ...group } = item;
           const headingId = `${item.key}-heading`;
 
           return (
@@ -1599,6 +1599,7 @@ export default class Select extends Component<Props, State> {
               Heading={GroupHeading}
               headingProps={{
                 id: headingId,
+                ...headingProps,
                 ...groupHeaderProps
               }}
               label={this.formatGroupLabel(item.data)}
