@@ -2429,6 +2429,7 @@ var defaultProps = {
   formatGroupLabel: formatGroupLabel,
   getOptionLabel: getOptionLabel,
   getOptionValue: getOptionValue,
+  groupHeaderProps: {},
   isDisabled: false,
   isLoading: false,
   isMulti: false,
@@ -3352,6 +3353,7 @@ var Select = function (_Component) {
           menuOptions = _state7.menuOptions;
       var _props11 = this.props,
           captureMenuScroll = _props11.captureMenuScroll,
+          groupHeaderProps = _props11.groupHeaderProps,
           inputValue = _props11.inputValue,
           isLoading = _props11.isLoading,
           loadingMessage = _props11.loadingMessage,
@@ -3390,7 +3392,8 @@ var Select = function (_Component) {
         menuUI = menuOptions.render.map(function (item) {
           if (item.type === 'group') {
             var type = item.type,
-                group = objectWithoutProperties(item, ['type']);
+                headingProps = item.headingProps,
+                group = objectWithoutProperties(item, ['type', 'headingProps']);
 
             var headingId = item.key + '-heading';
 
@@ -3398,9 +3401,9 @@ var Select = function (_Component) {
               Group,
               _extends({}, commonProps, group, {
                 Heading: GroupHeading,
-                headingProps: {
+                headingProps: _extends({
                   id: headingId
-                },
+                }, headingProps, groupHeaderProps),
                 label: _this5.formatGroupLabel(item.data)
               }),
               item.options.map(function (option) {
