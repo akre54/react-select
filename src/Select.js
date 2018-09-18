@@ -1323,7 +1323,7 @@ export default class Select extends Component<Props, State> {
       tabIndex,
     } = this.props;
     const { Input } = this.components;
-    const { inputIsHidden } = this.state;
+    const { inputIsHidden, isFocused } = this.state;
 
     const id = inputId || this.getElementId('input');
 
@@ -1362,6 +1362,7 @@ export default class Select extends Component<Props, State> {
         id={id}
         innerRef={this.getInputRef}
         isDisabled={isDisabled}
+        isFocused={isFocused}
         isHidden={inputIsHidden}
         onBlur={this.onInputBlur}
         onChange={this.handleInputChange}
