@@ -3267,7 +3267,9 @@
             inputValue = _props7.inputValue,
             tabIndex = _props7.tabIndex;
         var Input = this.components.Input;
-        var inputIsHidden = this.state.inputIsHidden;
+        var _state6 = this.state,
+            inputIsHidden = _state6.inputIsHidden,
+            isFocused = _state6.isFocused;
 
 
         var id = inputId || this.getElementId('input');
@@ -3307,6 +3309,7 @@
           id: id,
           innerRef: this.getInputRef,
           isDisabled: isDisabled,
+          isFocused: isFocused,
           isHidden: inputIsHidden,
           onBlur: this.onInputBlur,
           onChange: this.handleInputChange,
@@ -3338,9 +3341,9 @@
             isMulti = _props8.isMulti,
             inputValue = _props8.inputValue,
             placeholder = _props8.placeholder;
-        var _state6 = this.state,
-            selectValue = _state6.selectValue,
-            focusedValue = _state6.focusedValue;
+        var _state7 = this.state,
+            selectValue = _state7.selectValue,
+            focusedValue = _state7.focusedValue;
 
 
         if (!this.hasValue() || !controlShouldRenderValue) {
@@ -3505,9 +3508,9 @@
             NoOptionsMessage$$1 = _components3.NoOptionsMessage,
             Option = _components3.Option;
         var commonProps = this.commonProps;
-        var _state7 = this.state,
-            focusedOption = _state7.focusedOption,
-            menuOptions = _state7.menuOptions;
+        var _state8 = this.state,
+            focusedOption = _state8.focusedOption,
+            menuOptions = _state8.menuOptions;
         var _props11 = this.props,
             captureMenuScroll = _props11.captureMenuScroll,
             inputValue = _props11.inputValue,
@@ -3956,9 +3959,9 @@
 
     this.getActiveDescendentId = function () {
       var menuIsOpen = _this7.props.menuIsOpen;
-      var _state8 = _this7.state,
-          menuOptions = _state8.menuOptions,
-          focusedOption = _state8.focusedOption;
+      var _state9 = _this7.state,
+          menuOptions = _state9.menuOptions,
+          focusedOption = _state9.focusedOption;
 
 
       if (!focusedOption || !menuIsOpen) return undefined;
@@ -4202,11 +4205,11 @@
           onKeyDown = _props20.onKeyDown,
           tabSelectsValue = _props20.tabSelectsValue,
           openMenuOnFocus = _props20.openMenuOnFocus;
-      var _state9 = _this7.state,
-          isComposing = _state9.isComposing,
-          focusedOption = _state9.focusedOption,
-          focusedValue = _state9.focusedValue,
-          selectValue = _state9.selectValue;
+      var _state10 = _this7.state,
+          isComposing = _state10.isComposing,
+          focusedOption = _state10.focusedOption,
+          focusedValue = _state10.focusedValue,
+          selectValue = _state10.selectValue;
 
 
       if (isDisabled) return;
